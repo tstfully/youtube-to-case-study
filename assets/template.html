@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Replace with the case study title and a one-sentence summary -->
+  <title>CASE STUDY TITLE</title>
+  <meta name="description" content="ONE-SENTENCE SUMMARY">
+  <meta name="generator" content="youtube-to-case-study (https://github.com/tstfully/youtube-to-case-study)">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reset.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+
+  <style>
+    :root {
+      --bg: #fbf7f0;
+      --surface: #ffffff;
+      --ink: #1d1a16;
+      --muted: #6b6359;
+      --line: #e7dfd2;
+      --accent: #e8572a;
+      --accent-soft: #fde6dc;
+      --good: #2f7d5b;
+      --good-soft: #dff1e8;
+      --bad: #b23a3a;
+      --bad-soft: #f8e1e1;
+      --display: "Fraunces", Georgia, serif;
+      --body: "Inter", system-ui, -apple-system, sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #17140f; --surface: #221e18; --ink: #f4ede2; --muted: #a99f90;
+        --line: #3a3329; --accent: #ff7a4d; --accent-soft: #3d2419;
+        --good: #6cc59a; --good-soft: #1c3329; --bad: #ef7d7d; --bad-soft: #3a1f1f;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #17140f; --surface: #221e18; --ink: #f4ede2; --muted: #a99f90;
+      --line: #3a3329; --accent: #ff7a4d; --accent-soft: #3d2419;
+      --good: #6cc59a; --good-soft: #1c3329; --bad: #ef7d7d; --bad-soft: #3a1f1f;
+    }
+
+    html, body, .reveal-viewport { background: var(--bg); }
+    .reveal { font-family: var(--body); font-size: 30px; color: var(--ink); }
+    .reveal .slides { text-align: left; }
+    .reveal .slides section { height: 100%; display: flex !important; flex-direction: column; justify-content: center; align-items: flex-start; }
+    .reveal .slides section[hidden] { display: none !important; }
+    .reveal h1, .reveal h2, .reveal h3 { font-family: var(--display); color: var(--ink); letter-spacing: -0.02em; line-height: 1.1; margin: 0 0 0.5em; text-transform: none; }
+    .reveal h1 { font-size: 2.4em; font-weight: 800; }
+    .reveal h2 { font-size: 1.6em; font-weight: 800; }
+    .reveal h3 { font-size: 0.9em; font-weight: 600; margin-bottom: 0.3em; }
+    .reveal p { margin: 0 0 0.6em; line-height: 1.45; }
+    .reveal a { color: var(--accent); }
+    .reveal .eyebrow { font-size: 0.55em; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8em; }
+    .reveal .lead { font-size: 1.05em; color: var(--muted); max-width: 30em; }
+
+    /* timestamp chip */
+    .reveal a.ts { display: inline-block; width: fit-content; flex: none; font-size: 0.5em; font-weight: 600; padding: 0.15em 0.6em; border-radius: 999px; background: var(--accent-soft); color: var(--accent); text-decoration: none; vertical-align: middle; font-variant-numeric: tabular-nums; }
+    .reveal a.ts::before { content: "▶ "; font-size: 0.8em; }
+    .reveal a.ts:hover { background: var(--accent); color: var(--bg); }
+
+    /* title */
+    .slide-title h1 { max-width: 14em; }
+    .slide-title .source { font-size: 0.6em; color: var(--muted); }
+
+    /* hook */
+    .slide-hook h2 { font-size: 2em; max-width: 14em; }
+
+    /* divider */
+    .slide-divider::before { content: attr(data-step); font-family: var(--display); font-size: 4em; font-weight: 800; color: var(--accent); line-height: 1; margin-bottom: 0.1em; }
+    .slide-divider h2 { font-size: 2.2em; }
+
+    /* points */
+    .reveal ul.points { list-style: none; margin: 0; padding: 0; }
+    .reveal ul.points li { padding: 0.45em 0 0.45em 1.2em; border-bottom: 1px solid var(--line); position: relative; }
+    .reveal ul.points li::before { content: ""; position: absolute; left: 0; top: 0.95em; width: 0.45em; height: 0.45em; border-radius: 50%; background: var(--accent); }
+
+    /* big number */
+    .reveal .slides section.slide-big { align-items: center; text-align: center; }
+    .slide-big .big { font-family: var(--display); font-size: 6em; font-weight: 800; color: var(--accent); line-height: 1; margin: 0; }
+    .slide-big .caption { font-size: 1.1em; max-width: 20em; }
+
+    /* stats */
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(6em, 1fr)); gap: 0.6em; }
+    .stat { background: var(--surface); border: 1px solid var(--line); border-radius: 0.5em; padding: 0.7em; }
+    .stat .num { display: block; font-family: var(--display); font-size: 1.9em; font-weight: 800; color: var(--accent); }
+    .stat .label { font-size: 0.6em; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+
+    /* quote */
+    .slide-quote blockquote { font-family: var(--display); font-size: 1.5em; font-weight: 600; font-style: normal; line-height: 1.25; width: auto; margin: 0 0 0.6em; padding: 0 0 0 0.7em; border-left: 0.15em solid var(--accent); background: none; box-shadow: none; }
+    .slide-quote .who { font-size: 0.65em; color: var(--muted); }
+
+    /* compare */
+    .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6em; }
+    .compare .col { border-radius: 0.5em; padding: 0.8em; }
+    .compare .before { background: var(--bad-soft); }
+    .compare .after { background: var(--good-soft); }
+    .compare .tag { display: block; font-size: 0.55em; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.4em; }
+    .compare .before .tag { color: var(--bad); }
+    .compare .after .tag { color: var(--good); }
+
+    /* steps */
+    .reveal ol.steps { list-style: none; counter-reset: s; margin: 0; padding: 0; }
+    .reveal ol.steps li { counter-increment: s; display: grid; grid-template-columns: 1.6em 1fr; column-gap: 0.6em; margin-bottom: 0.55em; }
+    .reveal ol.steps li::before { content: counter(s); grid-row: span 2; width: 1.4em; height: 1.4em; border-radius: 50%; background: var(--accent); color: var(--bg); font-weight: 600; font-size: 0.8em; display: grid; place-items: center; }
+    .reveal ol.steps li span { color: var(--muted); font-size: 0.75em; }
+
+    /* cards */
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(7em, 1fr)); gap: 0.6em; }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: 0.5em; padding: 0.8em; }
+    .card .icon { font-size: 1.3em; }
+    .card p { font-size: 0.65em; color: var(--muted); margin: 0; }
+
+    /* analysis badge */
+    section[data-kind="analysis"]::after { content: "Analysis"; position: absolute; top: 0; right: 0; font-size: 0.45em; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.3em 0.8em; border-radius: 999px; border: 1px solid var(--muted); color: var(--muted); }
+
+    /* quiz */
+    .reveal .slide-quiz ul.options { list-style: none; margin: 0 0 0.6em; padding: 0; }
+    .reveal .slide-quiz ul.options li { background: var(--surface); border: 1px solid var(--line); border-radius: 0.4em; padding: 0.4em 0.7em; margin-bottom: 0.35em; font-size: 0.8em; }
+    .reveal .slide-quiz .answer { background: var(--good-soft); color: var(--ink); border-radius: 0.4em; padding: 0.5em 0.7em; font-size: 0.8em; }
+
+    /* sources */
+    .reveal .slide-sources ul.source-list { list-style: none; margin: 0; padding: 0; font-size: 0.7em; }
+    .reveal .slide-sources ul.source-list li { margin-bottom: 0.35em; }
+    .reveal .slide-sources ul.source-list a.ts { margin-right: 0.6em; }
+
+    /* chrome */
+    .reveal .progress { color: var(--accent); }
+    .reveal .controls { color: var(--accent); }
+    .reveal .slide-number { background: transparent; color: var(--muted); font: 500 12px/1 var(--body); right: 16px; bottom: 14px; }
+    .credit { position: fixed; left: 16px; bottom: 12px; z-index: 30; font: 500 12px/1.3 var(--body); color: var(--muted); }
+    .credit a { color: var(--muted); }
+
+    @media (max-width: 640px) {
+      .compare { grid-template-columns: 1fr; }
+      .credit { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- SLIDES GO HERE. Use only the patterns in references/slide-patterns.md. -->
+      <section class="slide-title">
+        <p class="eyebrow">Case study</p>
+        <h1>Your case study title</h1>
+        <p class="source">From <strong>“Video title”</strong> · Channel name</p>
+      </section>
+
+    </div>
+  </div>
+
+  <p class="credit">Made with <a href="https://github.com/tstfully/youtube-to-case-study" target="_blank">youtube-to-case-study</a> · transcript by <a href="https://youtubetranscript.dev" target="_blank">YouTubeTranscript.dev</a></p>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/notes/notes.min.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      center: false,
+      width: 1280,
+      height: 720,
+      margin: 0.08,
+      transition: "slide",
+      slideNumber: "c/t",
+      plugins: [RevealNotes]
+    });
+  </script>
+</body>
+</html>
