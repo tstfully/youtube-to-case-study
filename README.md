@@ -112,6 +112,11 @@ youtube-to-case-study/
 └── scripts/fetch-transcript.mjs      # Zero-dependency transcript fetcher
 ```
 
+## Companion skills
+
+- [youtube-to-course](https://github.com/tstfully/youtube-to-course): turn a video into an interactive course with quizzes and flashcards
+- [youtube-to-ai-chat](https://github.com/tstfully/youtube-to-ai-chat): chat with any YouTube video, with answers cited to the second
+
 ## More from YouTubeTranscript.dev
 
 - [YouTube Transcript API](https://github.com/Youtube-Transcript-Dev/Youtube-Transcript-API): REST API, examples, and an API skill
