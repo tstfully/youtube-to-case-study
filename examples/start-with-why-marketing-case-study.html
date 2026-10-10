@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Replace with the case study title and a one-sentence summary -->
+  <title>Start With Why Case Study</title>
+  <meta name="description" content="Marketing case study of Simon Sinek's TED talk How Great Leaders Inspire Action, with timestamp links to every quote.">
+  <meta name="generator" content="youtube-to-case-study (https://github.com/tstfully/youtube-to-case-study)">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reset.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+
+  <style>
+    :root {
+      --bg: #fbf7f0;
+      --surface: #ffffff;
+      --ink: #1d1a16;
+      --muted: #6b6359;
+      --line: #e7dfd2;
+      --accent: #e8572a;
+      --accent-soft: #fde6dc;
+      --good: #2f7d5b;
+      --good-soft: #dff1e8;
+      --bad: #b23a3a;
+      --bad-soft: #f8e1e1;
+      --display: "Fraunces", Georgia, serif;
+      --body: "Inter", system-ui, -apple-system, sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #17140f; --surface: #221e18; --ink: #f4ede2; --muted: #a99f90;
+        --line: #3a3329; --accent: #ff7a4d; --accent-soft: #3d2419;
+        --good: #6cc59a; --good-soft: #1c3329; --bad: #ef7d7d; --bad-soft: #3a1f1f;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #17140f; --surface: #221e18; --ink: #f4ede2; --muted: #a99f90;
+      --line: #3a3329; --accent: #ff7a4d; --accent-soft: #3d2419;
+      --good: #6cc59a; --good-soft: #1c3329; --bad: #ef7d7d; --bad-soft: #3a1f1f;
+    }
+
+    html, body, .reveal-viewport { background: var(--bg); }
+    .reveal { font-family: var(--body); font-size: 30px; color: var(--ink); }
+    .reveal .slides { text-align: left; }
+    .reveal .slides section { height: 100%; display: flex !important; flex-direction: column; justify-content: center; align-items: flex-start; }
+    .reveal .slides section[hidden] { display: none !important; }
+    .reveal .slides section > .stats, .reveal .slides section > .cards, .reveal .slides section > .compare, .reveal .slides section > ul.points, .reveal .slides section > ol.steps { align-self: stretch; }
+    .reveal .slide-quiz ul.options { align-self: stretch; max-width: 34em; }
+    .reveal h1, .reveal h2, .reveal h3 { font-family: var(--display); color: var(--ink); letter-spacing: -0.02em; line-height: 1.1; margin: 0 0 0.5em; text-transform: none; }
+    .reveal h1 { font-size: 2.4em; font-weight: 800; }
+    .reveal h2 { font-size: 1.6em; font-weight: 800; }
+    .reveal h3 { font-size: 0.9em; font-weight: 600; margin-bottom: 0.3em; }
+    .reveal p { margin: 0 0 0.6em; line-height: 1.45; }
+    .reveal a { color: var(--accent); }
+    .reveal .eyebrow { font-size: 0.55em; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8em; }
+    .reveal .lead { font-size: 1.05em; color: var(--muted); max-width: 30em; }
+
+    /* timestamp chip */
+    .reveal a.ts { display: inline-block; width: fit-content; flex: none; font-size: 0.5em; font-weight: 600; padding: 0.15em 0.6em; border-radius: 999px; background: var(--accent-soft); color: var(--accent); text-decoration: none; vertical-align: middle; font-variant-numeric: tabular-nums; }
+    .reveal a.ts::before { content: "▶ "; font-size: 0.8em; }
+    .reveal a.ts:hover { background: var(--accent); color: var(--bg); }
+
+    /* title */
+    .slide-title h1 { max-width: 14em; }
+    .slide-title .source { font-size: 0.6em; color: var(--muted); }
+
+    /* hook */
+    .slide-hook h2 { font-size: 2em; max-width: 14em; }
+
+    /* divider */
+    .slide-divider::before { content: attr(data-step); font-family: var(--display); font-size: 4em; font-weight: 800; color: var(--accent); line-height: 1; margin-bottom: 0.1em; }
+    .slide-divider h2 { font-size: 2.2em; }
+
+    /* points */
+    .reveal ul.points { list-style: none; margin: 0; padding: 0; }
+    .reveal ul.points li { padding: 0.45em 0 0.45em 1.2em; border-bottom: 1px solid var(--line); position: relative; }
+    .reveal ul.points li::before { content: ""; position: absolute; left: 0; top: 0.95em; width: 0.45em; height: 0.45em; border-radius: 50%; background: var(--accent); }
+
+    /* big number */
+    .reveal .slides section.slide-big { align-items: center; text-align: center; }
+    .slide-big .big { font-family: var(--display); font-size: 6em; font-weight: 800; color: var(--accent); line-height: 1; margin: 0; }
+    .slide-big .caption { font-size: 1.1em; max-width: 20em; }
+
+    /* stats */
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(6em, 1fr)); gap: 0.6em; }
+    .stat { background: var(--surface); border: 1px solid var(--line); border-radius: 0.5em; padding: 0.7em; }
+    .stat .num { display: block; font-family: var(--display); font-size: 1.9em; font-weight: 800; color: var(--accent); }
+    .stat .label { font-size: 0.6em; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+
+    /* quote */
+    .slide-quote blockquote { font-family: var(--display); font-size: 1.5em; font-weight: 600; font-style: normal; line-height: 1.25; width: auto; margin: 0 0 0.6em; padding: 0 0 0 0.7em; border-left: 0.15em solid var(--accent); background: none; box-shadow: none; }
+    .slide-quote .who { font-size: 0.65em; color: var(--muted); }
+
+    /* compare */
+    .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6em; }
+    .compare .col { border-radius: 0.5em; padding: 0.8em; }
+    .compare .before { background: var(--bad-soft); }
+    .compare .after { background: var(--good-soft); }
+    .compare .tag { display: block; font-size: 0.55em; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.4em; }
+    .compare .before .tag { color: var(--bad); }
+    .compare .after .tag { color: var(--good); }
+
+    /* steps */
+    .reveal ol.steps { list-style: none; counter-reset: s; margin: 0; padding: 0; }
+    .reveal ol.steps li { counter-increment: s; display: grid; grid-template-columns: 1.6em 1fr; column-gap: 0.6em; margin-bottom: 0.55em; }
+    .reveal ol.steps li::before { content: counter(s); grid-row: span 2; width: 1.4em; height: 1.4em; border-radius: 50%; background: var(--accent); color: var(--bg); font-weight: 600; font-size: 0.8em; display: grid; place-items: center; }
+    .reveal ol.steps li span { color: var(--muted); font-size: 0.75em; }
+
+    /* cards */
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(7em, 1fr)); gap: 0.6em; }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: 0.5em; padding: 0.8em; }
+    .card .icon { font-size: 1.3em; }
+    .card p { font-size: 0.65em; color: var(--muted); margin: 0; }
+
+    /* analysis badge */
+    section[data-kind="analysis"]::after { content: "Analysis"; position: absolute; top: 0; right: 0; font-size: 0.45em; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.3em 0.8em; border-radius: 999px; border: 1px solid var(--muted); color: var(--muted); }
+
+    /* quiz */
+    .reveal .slide-quiz ul.options { list-style: none; margin: 0 0 0.6em; padding: 0; }
+    .reveal .slide-quiz ul.options li { background: var(--surface); border: 1px solid var(--line); border-radius: 0.4em; padding: 0.4em 0.7em; margin-bottom: 0.35em; font-size: 0.8em; }
+    .reveal .slide-quiz .answer { background: var(--good-soft); color: var(--ink); border-radius: 0.4em; padding: 0.5em 0.7em; font-size: 0.8em; }
+
+    /* sources */
+    .reveal .slide-sources ul.source-list { list-style: none; margin: 0; padding: 0; font-size: 0.7em; }
+    .reveal .slide-sources ul.source-list li { margin-bottom: 0.35em; }
+    .reveal .slide-sources ul.source-list a.ts { margin-right: 0.6em; }
+
+    /* chrome */
+    .reveal .progress { color: var(--accent); }
+    .reveal .controls { color: var(--accent); }
+    .reveal .slide-number { background: transparent; color: var(--muted); font: 500 12px/1 var(--body); right: 16px; bottom: 14px; }
+    .credit { position: fixed; left: 16px; bottom: 12px; z-index: 30; font: 500 12px/1.3 var(--body); color: var(--muted); }
+    .credit a { color: var(--muted); }
+    .hint { position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 31; display: flex; gap: 10px; align-items: center; font: 500 13px/1 var(--body); color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 9px 14px; box-shadow: 0 6px 24px rgba(0,0,0,.08); transition: opacity .4s; white-space: nowrap; }
+    .hint kbd { font: 600 11px var(--body); border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 5px; padding: 2px 6px; background: var(--bg); }
+    .hint.gone { opacity: 0; pointer-events: none; }
+    .pdf-btn { position: fixed; left: 16px; top: 14px; z-index: 30; font: 600 12px/1 var(--body); color: var(--muted); text-decoration: none; border: 1px solid var(--line); border-radius: 999px; padding: 7px 11px; background: var(--surface); }
+    .pdf-btn:hover { color: var(--accent); border-color: var(--accent); }
+    @media print { .hint, .pdf-btn, .credit { display: none !important; } }
+
+    @media (max-width: 640px) {
+      .compare { grid-template-columns: 1fr; }
+      .credit { display: none; }
+      .hint { font-size: 12px; }
+      .hint .desk { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section class="slide-title">
+        <p class="eyebrow">📣 Marketing case study</p>
+        <h1>Start with why: how Apple sells a computer by leading with a belief</h1>
+        <p class="source">From <strong>“How Great Leaders Inspire Action”</strong> · Simon Sinek · TED · 18 min</p>
+        <aside class="notes">A marketing case study of Simon Sinek's TED talk. Every quote and number links to the moment in the video.</aside>
+      </section>
+
+      <section class="slide-hook">
+        <p class="eyebrow">The hook</p>
+        <h2>“People don't buy what you do; people buy why you do it.”</h2>
+        <a class="ts" href="https://www.youtube.com/watch?v=qp0HIF3SfI4&t=273s" target="_blank">4:33</a>
+        <aside class="notes">Sinek repeats this line throughout the talk. It's the thesis of the whole case.</aside>
+      </section>
+
+      <section>
+        <p class="eyebrow">The puzzle</p>
+        <h2>Same talent, same agencies, different results</h2>
+        <ul class="points">
+          <li>Apple has “the same access to the same talent, the same agencies” as everyone else <a class="ts" href="https://www.youtube.com/watch?v=qp0HIF3SfI4&t=40s" target="_blank">0:40</a></li>
+          <li>The Wright brothers beat teams that were “better qualified, better funded” <a class="ts" href="https://www.youtube.com/watch?v=qp0HIF3SfI4&t=70s" target="_blank">1:10</a></li>
+          <li>Sinek's claim: inspiring leaders all communicate the same way, the opposite of everyone else <a class="ts" href="https://www.youtube.com/watch?v=qp0HIF3SfI4&t=107s" target="_blank">1:47</a></li>
+        </ul>
+        <aside class="notes">Set up the mystery: resources don't explain who wins.</aside>
+      </section>
+
+      <section>
+        <p class="eyebrow">The insight</p>
+        <h2>The golden circle: most brands talk outside in</h2>
+        <ol class="steps">
+          <li><strong>What</strong><span>Everyone knows what they do, 100 percent <a class="ts" href="https://www.youtube.com/watch?v=qp0HIF3SfI4&t=142s" target="_blank">2:22</a></span></li>
+          <li><strong>How</strong><span>Some know how: the USP or proprietary process <a class="ts" href="https://www.youtube.com/watch?v=qp0HIF3SfI4&t=149s" target="_blank">2:29</a></span></li>
+          <li><strong>Why</strong><span>Very few know why. Not profit: “That's a result” <a class="ts" href="https://www.youtube.com/watch?v=qp0HIF3SfI4&t=156s" target="_blank">2:36</a></span></li>
+        </ol>
+        <aside class="notes">Inspired organizations think, act and communicate from the inside out, starting with why (3:05).</aside>
+      </section>
+
+      <section>
+        <h2>Same facts, reversed order, a different reaction</h2>
+        <div class="compare">
+          <div class="col before"><span class="tag">Outside in</span><p>“We make great computers… Want to buy one?” <a class="ts" href="https://www.youtube.com/watch?v=qp0HIF3SfI4&t=208s" target="_blank">3:28</a></p></div>
+          <div class="col after"><span class="tag">Inside out</span><p>“Everything we do, we believe in challenging the status quo… We just happen to make great computers.” <a class="ts" href="https://www.youtube.com/watch?v=qp0HIF3SfI4&t=248s" target="_blank">4:08</a></p></div>
+        </div>
+        <aside class="notes">“I just reversed the order of the information.” (4:31)</aside>
+      </section>
+
+      <section class="slide-divider" data-step="01">
+        <h2>The proof</h2>
+      </section>
+
+      <section>
+        <h2>Competitors could build it. Nobody bought it.</h2>
+        <ul class="points">
+          <li>Gateway launched flat-screen TVs. “Nobody bought one.” <a class="ts" href="https://www.youtube.com/watch?v=qp0HIF3SfI4&t=305s" target="_blank">5:05</a></li>
+          <li>Dell launched MP3 players and PDAs. “Nobody bought one.” <a class="ts" href="https://www.youtube.com/watch?v=qp0HIF3SfI4&t=317s" target="_blank">5:17</a></li>
+          <li>Yet people happily buy phones and MP3 players from a computer company <a class="ts" href="https://www.youtube.com/watch?v=qp0HIF3SfI4&t=287s" target="_blank">4:47</a></li>
+        </ul>
+        <aside class="notes">The product capability was there. The belief wasn't.</aside>
+      </section>
+
+      <section>
+        <h2>Langley had the “recipe for success”. The Wrights had a why.</h2>
+        <div class="stats">
+          <div class="stat"><span class="num">$50,000</span><span class="label">from the War Department to Langley</span></div>
+          <div class="stat"><span class="num">0</span><span class="label">college degrees on the Wright team</span></div>
+          <div class="stat"><span class="num">5</span><span class="label">sets of parts per test day</span></div>
+        </div>
+        <aside class="notes">Funding (8:51), no college education (9:33), five sets of parts because they'd crash that many times before supper (10:17).</aside>
+      </section>
+
+      <section class="slide-big">
+        <p class="big">15–18%</p>
+        <p class="caption">market penetration before an idea tips into the mass market, per the law of diffusion of innovation</p>
+        <a class="ts" href="https://www.youtube.com/watch?v=qp0HIF3SfI4&t=705s" target="_blank">11:45</a>
+        <aside class="notes">Innovators (2.5%) and early adopters (13.5%) buy on belief; the majority waits for them (11:12).</aside>
+      </section>
+
+      <section>
+        <h2>TiVo led with features, and the majority said no</h2>
+        <div class="compare">
+          <div class="col before"><span class="tag">What TiVo said</span><p>“We have a product that pauses live TV, skips commercials…” <a class="ts" href="https://www.youtube.com/watch?v=qp0HIF3SfI4&t=872s" target="_blank">14:32</a></p></div>
+          <div class="col after"><span class="tag">What Sinek suggests</span><p>“If you're the kind of person who likes to have total control… boy, do we have a product for you.” <a class="ts" href="https://www.youtube.com/watch?v=qp0HIF3SfI4&t=891s" target="_blank">14:51</a></p></div>
+        </div>
+        <aside class="notes">Highest-quality product, well funded, great market conditions, and still a commercial failure (13:48).</aside>
+      </section>
+
+      <section class="slide-quote">
+        <blockquote>He gave the “I have a dream” speech, not the “I have a plan” speech.</blockquote>
+        <p class="who">Simon Sinek <a class="ts" href="https://www.youtube.com/watch?v=qp0HIF3SfI4&t=1027s" target="_blank">17:07</a></p>
+        <aside class="notes">250,000 people showed up in 1963 with no invitations (15:21). They came for what they believed.</aside>
+      </section>
+
+      <section data-kind="analysis">
+        <h2>Why this works for marketers</h2>
+        <p class="lead">Features answer “what”. A belief gives early adopters a reason to choose you, and something to repeat to others. Lead with the belief, then let the product be the proof.</p>
+        <aside class="notes">Our interpretation, not Sinek's words.</aside>
+      </section>
+
+      <section>
+        <p class="eyebrow">What to steal</p>
+        <h2>Three moves for your next campaign</h2>
+        <div class="cards">
+          <div class="card"><span class="icon">🧭</span><h3>Open with your why</h3><p>State the belief first, then how, then what.</p></div>
+          <div class="card"><span class="icon">🎯</span><h3>Target believers</h3><p>Sell to people who believe what you believe, not everyone who needs it.</p></div>
+          <div class="card"><span class="icon">🧾</span><h3>Make products the proof</h3><p>“What you do simply proves what you believe.”</p></div>
+        </div>
+        <aside class="notes">Quote on the third card is from 13:08.</aside>
+      </section>
+
+      <section class="slide-quiz">
+        <p class="eyebrow">Your turn 🤔</p>
+        <h2>Your new app has great features but low signups. What would Sinek change first?</h2>
+        <ul class="options">
+          <li>A. Add more features to the landing page</li>
+          <li>B. Lead the page with what you believe, then the features</li>
+          <li>C. Cut the price</li>
+        </ul>
+        <p class="fragment answer">Sinek's answer: <strong>B</strong>. Reverse the order of the information <a class="ts" href="https://www.youtube.com/watch?v=qp0HIF3SfI4&t=271s" target="_blank">4:31</a></p>
+      </section>
+
+      <section class="slide-sources">
+        <h2>Sources</h2>
+        <p>All quotes and numbers from <a href="https://www.youtube.com/watch?v=qp0HIF3SfI4" target="_blank">“How Great Leaders Inspire Action”</a> by Simon Sinek (TED).</p>
+        <ul class="source-list">
+          <li><a class="ts" href="https://www.youtube.com/watch?v=qp0HIF3SfI4&t=121s" target="_blank">2:01</a> The golden circle</li>
+          <li><a class="ts" href="https://www.youtube.com/watch?v=qp0HIF3SfI4&t=248s" target="_blank">4:08</a> How Apple actually communicates</li>
+          <li><a class="ts" href="https://www.youtube.com/watch?v=qp0HIF3SfI4&t=305s" target="_blank">5:05</a> Gateway and Dell</li>
+          <li><a class="ts" href="https://www.youtube.com/watch?v=qp0HIF3SfI4&t=529s" target="_blank">8:49</a> Langley and the Wright brothers</li>
+          <li><a class="ts" href="https://www.youtube.com/watch?v=qp0HIF3SfI4&t=667s" target="_blank">11:07</a> The law of diffusion of innovation</li>
+          <li><a class="ts" href="https://www.youtube.com/watch?v=qp0HIF3SfI4&t=828s" target="_blank">13:48</a> TiVo</li>
+          <li><a class="ts" href="https://www.youtube.com/watch?v=qp0HIF3SfI4&t=921s" target="_blank">15:21</a> Dr. King and the March on Washington</li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+
+  <div class="hint" aria-hidden="true"><span>👉 <kbd>→</kbd> or swipe</span><span class="desk"><kbd>S</kbd> notes</span><span class="desk"><kbd>F</kbd> full screen</span><span class="desk"><kbd>Esc</kbd> overview</span></div>
+  <a class="pdf-btn" href="?print-pdf" title="Open the print view, then choose Save as PDF">⬇ PDF</a>
+  <p class="credit">Made with <a href="https://github.com/tstfully/youtube-to-case-study" target="_blank">youtube-to-case-study</a> · transcript by <a href="https://youtubetranscript.dev" target="_blank">YouTubeTranscript.dev</a></p>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/notes/notes.min.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      center: false,
+      width: 1280,
+      height: 720,
+      margin: 0.08,
+      transition: "slide",
+      slideNumber: "c/t",
+      plugins: [RevealNotes]
+    });
+    (function () {
+      var hint = document.querySelector(".hint");
+      function hide() { hint.classList.add("gone"); }
+      Reveal.on("slidechanged", hide);
+      setTimeout(hide, 6000);
+      if (/print-pdf/.test(location.search)) { hide(); setTimeout(function () { window.print(); }, 1200); }
+    })();
+  </script>
+</body>
+</html>

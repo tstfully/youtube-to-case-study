@@ -24,6 +24,7 @@
 - [references/slide-patterns.md](references/slide-patterns.md): HTML for every slide type
 - [assets/template.html](assets/template.html): the slide template and design system
 - [scripts/fetch-transcript.mjs](scripts/fetch-transcript.mjs): zero-dependency transcript fetcher (Node 18+)
+- [examples/start-with-why-marketing-case-study.html](examples/start-with-why-marketing-case-study.html): real example deck from Simon Sinek's TED talk "How great leaders inspire action"
 - [examples/brewly-growth-teardown.html](examples/brewly-growth-teardown.html): finished example deck (fictional company)
 
 ## Related

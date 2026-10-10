@@ -8,7 +8,7 @@
 [![Claude skill](https://img.shields.io/badge/Claude-skill-e8572a)](#-get-started-in-60-seconds)
 [![Works with](https://img.shields.io/badge/works%20with-Claude%20Code%20·%20Claude.ai%20·%20Cursor-6b6359)](#-get-started-in-60-seconds)
 
-<img src="docs/hero.png" alt="A case-study slide reading: They made the reward smaller, and people came back three times as often." width="820">
+<img src="docs/real-hero.png" alt="A real case-study slide made from Simon Sinek's TED talk Start With Why." width="820">
 
 **Paste a YouTube link → get a presentation-ready case study** 💼 📣 🧭 📈
 <br>Founder interviews, product teardowns, conference talks, podcasts, marketing breakdowns: they all become a story with receipts.
@@ -33,9 +33,17 @@ One HTML file that opens in any browser. No PowerPoint, no Canva, no account.
 | 🌗 **Light & dark mode** | And it works on phones (swipe to flip) |
 | 🛡️ **Honest by design** | The AI's own opinions get an "Analysis" badge, never passed off as fact |
 
-<img src="docs/slides-gallery.png" alt="Six example slides: title, hook, before and after, big number, quote, and what to steal." width="100%">
+## 👀 See a real example
 
-👉 **[See the full example deck](examples/brewly-growth-teardown.html)** (download it and open in your browser). It's a growth teardown of *Brewly*, a fictional coffee app, showing every slide type.
+**🎤 [Start With Why: a marketing case study](examples/start-with-why-marketing-case-study.html)**, made from Simon Sinek's TED talk *[How great leaders inspire action](https://www.youtube.com/watch?v=qp0HIF3SfI4)*. 15 slides, short quotes only, and every quote links to the exact second of the talk. Download it and open it in your browser.
+
+<img src="docs/real-gallery.png" alt="Six slides from the Start With Why case study: title, hook, the golden circle, a pull quote, and lessons." width="100%">
+
+<sub>Video and quotes © Simon Sinek / TED, used briefly for commentary with links back to the original. Go watch it, it's great.</sub>
+
+**🧪 Second example: every slide type.** [Brewly growth teardown](examples/brewly-growth-teardown.html), a fictional coffee app, shows off all the slide layouts.
+
+<img src="docs/slides-gallery.png" alt="Six example slides: title, hook, before and after, big number, quote, and what to steal." width="100%">
 
 ---
 
