@@ -5,7 +5,7 @@
 ## Install
 
 - Claude Code (one step): `/plugin install youtube-to-case-study --marketplace tstfully/youtube-to-case-study`
-- Claude Code (two steps): `/plugin marketplace add tstfully/youtube-to-case-study` then `/plugin install youtube-to-case-study@youtube-skills`
+- Claude Code (two steps): `/plugin marketplace add tstfully/youtube-to-case-study` then `/plugin install youtube-to-case-study@youtube-to-case-study`
 - Any agent via the Skills CLI: `npx skills add tstfully/youtube-to-case-study`
 - Manual: clone into `~/.claude/skills/youtube-to-case-study`
 - Claude.ai: download the repo ZIP and upload it under Settings → Capabilities → Skills
