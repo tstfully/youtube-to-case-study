@@ -17,7 +17,7 @@ Timestamp links always look like this (replace `VIDEO_ID` and the seconds):
 ```html
 <section class="slide-title">
   <p class="eyebrow">Marketing case study</p>
-  <h1>How Duolingo turned a streak into a habit machine</h1>
+  <h1>How Brewly turned a stamp card into a habit loop</h1>
   <p class="source">From <strong>“Video title”</strong> · Channel name · 42 min</p>
 </section>
 ```
@@ -85,7 +85,7 @@ Only use numbers that are SAID in the video.
 ```html
 <section class="slide-quote">
   <blockquote>We stopped asking what users want and started watching what they do.</blockquote>
-  <p class="who">Jane Doe, Head of Product <a class="ts" href="…&t=845s" target="_blank">14:05</a></p>
+  <p class="who">Maya Chen, co-founder <a class="ts" href="…&t=845s" target="_blank">14:05</a></p>
 </section>
 ```
 

@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Replace with the case study title and a one-sentence summary -->
+  <title>Brewly Growth Teardown</title>
+  <meta name="description" content="Demo case study: how a fictional coffee app turned a stamp card into a daily habit.">
+  <meta name="generator" content="youtube-to-case-study (https://github.com/tstfully/youtube-to-case-study)">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reset.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+
+  <style>
+    :root {
+      --bg: #fbf7f0;
+      --surface: #ffffff;
+      --ink: #1d1a16;
+      --muted: #6b6359;
+      --line: #e7dfd2;
+      --accent: #e8572a;
+      --accent-soft: #fde6dc;
+      --good: #2f7d5b;
+      --good-soft: #dff1e8;
+      --bad: #b23a3a;
+      --bad-soft: #f8e1e1;
+      --display: "Fraunces", Georgia, serif;
+      --body: "Inter", system-ui, -apple-system, sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #17140f; --surface: #221e18; --ink: #f4ede2; --muted: #a99f90;
+        --line: #3a3329; --accent: #ff7a4d; --accent-soft: #3d2419;
+        --good: #6cc59a; --good-soft: #1c3329; --bad: #ef7d7d; --bad-soft: #3a1f1f;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #17140f; --surface: #221e18; --ink: #f4ede2; --muted: #a99f90;
+      --line: #3a3329; --accent: #ff7a4d; --accent-soft: #3d2419;
+      --good: #6cc59a; --good-soft: #1c3329; --bad: #ef7d7d; --bad-soft: #3a1f1f;
+    }
+
+    html, body, .reveal-viewport { background: var(--bg); }
+    .reveal { font-family: var(--body); font-size: 30px; color: var(--ink); }
+    .reveal .slides { text-align: left; }
+    .reveal .slides section { height: 100%; display: flex !important; flex-direction: column; justify-content: center; align-items: flex-start; }
+    .reveal .slides section[hidden] { display: none !important; }
+    .reveal .slides section > .stats, .reveal .slides section > .cards, .reveal .slides section > .compare, .reveal .slides section > ul.points, .reveal .slides section > ol.steps { align-self: stretch; }
+    .reveal .slide-quiz ul.options { align-self: stretch; max-width: 34em; }
+    .reveal h1, .reveal h2, .reveal h3 { font-family: var(--display); color: var(--ink); letter-spacing: -0.02em; line-height: 1.1; margin: 0 0 0.5em; text-transform: none; }
+    .reveal h1 { font-size: 2.4em; font-weight: 800; }
+    .reveal h2 { font-size: 1.6em; font-weight: 800; }
+    .reveal h3 { font-size: 0.9em; font-weight: 600; margin-bottom: 0.3em; }
+    .reveal p { margin: 0 0 0.6em; line-height: 1.45; }
+    .reveal a { color: var(--accent); }
+    .reveal .eyebrow { font-size: 0.55em; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.8em; }
+    .reveal .lead { font-size: 1.05em; color: var(--muted); max-width: 30em; }
+
+    /* timestamp chip */
+    .reveal a.ts { display: inline-block; width: fit-content; flex: none; font-size: 0.5em; font-weight: 600; padding: 0.15em 0.6em; border-radius: 999px; background: var(--accent-soft); color: var(--accent); text-decoration: none; vertical-align: middle; font-variant-numeric: tabular-nums; }
+    .reveal a.ts::before { content: "▶ "; font-size: 0.8em; }
+    .reveal a.ts:hover { background: var(--accent); color: var(--bg); }
+
+    /* title */
+    .slide-title h1 { max-width: 14em; }
+    .slide-title .source { font-size: 0.6em; color: var(--muted); }
+
+    /* hook */
+    .slide-hook h2 { font-size: 2em; max-width: 14em; }
+
+    /* divider */
+    .slide-divider::before { content: attr(data-step); font-family: var(--display); font-size: 4em; font-weight: 800; color: var(--accent); line-height: 1; margin-bottom: 0.1em; }
+    .slide-divider h2 { font-size: 2.2em; }
+
+    /* points */
+    .reveal ul.points { list-style: none; margin: 0; padding: 0; }
+    .reveal ul.points li { padding: 0.45em 0 0.45em 1.2em; border-bottom: 1px solid var(--line); position: relative; }
+    .reveal ul.points li::before { content: ""; position: absolute; left: 0; top: 0.95em; width: 0.45em; height: 0.45em; border-radius: 50%; background: var(--accent); }
+
+    /* big number */
+    .reveal .slides section.slide-big { align-items: center; text-align: center; }
+    .slide-big .big { font-family: var(--display); font-size: 6em; font-weight: 800; color: var(--accent); line-height: 1; margin: 0; }
+    .slide-big .caption { font-size: 1.1em; max-width: 20em; }
+
+    /* stats */
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(6em, 1fr)); gap: 0.6em; }
+    .stat { background: var(--surface); border: 1px solid var(--line); border-radius: 0.5em; padding: 0.7em; }
+    .stat .num { display: block; font-family: var(--display); font-size: 1.9em; font-weight: 800; color: var(--accent); }
+    .stat .label { font-size: 0.6em; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+
+    /* quote */
+    .slide-quote blockquote { font-family: var(--display); font-size: 1.5em; font-weight: 600; font-style: normal; line-height: 1.25; width: auto; margin: 0 0 0.6em; padding: 0 0 0 0.7em; border-left: 0.15em solid var(--accent); background: none; box-shadow: none; }
+    .slide-quote .who { font-size: 0.65em; color: var(--muted); }
+
+    /* compare */
+    .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6em; }
+    .compare .col { border-radius: 0.5em; padding: 0.8em; }
+    .compare .before { background: var(--bad-soft); }
+    .compare .after { background: var(--good-soft); }
+    .compare .tag { display: block; font-size: 0.55em; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.4em; }
+    .compare .before .tag { color: var(--bad); }
+    .compare .after .tag { color: var(--good); }
+
+    /* steps */
+    .reveal ol.steps { list-style: none; counter-reset: s; margin: 0; padding: 0; }
+    .reveal ol.steps li { counter-increment: s; display: grid; grid-template-columns: 1.6em 1fr; column-gap: 0.6em; margin-bottom: 0.55em; }
+    .reveal ol.steps li::before { content: counter(s); grid-row: span 2; width: 1.4em; height: 1.4em; border-radius: 50%; background: var(--accent); color: var(--bg); font-weight: 600; font-size: 0.8em; display: grid; place-items: center; }
+    .reveal ol.steps li span { color: var(--muted); font-size: 0.75em; }
+
+    /* cards */
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(7em, 1fr)); gap: 0.6em; }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: 0.5em; padding: 0.8em; }
+    .card .icon { font-size: 1.3em; }
+    .card p { font-size: 0.65em; color: var(--muted); margin: 0; }
+
+    /* analysis badge */
+    section[data-kind="analysis"]::after { content: "Analysis"; position: absolute; top: 0; right: 0; font-size: 0.45em; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.3em 0.8em; border-radius: 999px; border: 1px solid var(--muted); color: var(--muted); }
+
+    /* quiz */
+    .reveal .slide-quiz ul.options { list-style: none; margin: 0 0 0.6em; padding: 0; }
+    .reveal .slide-quiz ul.options li { background: var(--surface); border: 1px solid var(--line); border-radius: 0.4em; padding: 0.4em 0.7em; margin-bottom: 0.35em; font-size: 0.8em; }
+    .reveal .slide-quiz .answer { background: var(--good-soft); color: var(--ink); border-radius: 0.4em; padding: 0.5em 0.7em; font-size: 0.8em; }
+
+    /* sources */
+    .reveal .slide-sources ul.source-list { list-style: none; margin: 0; padding: 0; font-size: 0.7em; }
+    .reveal .slide-sources ul.source-list li { margin-bottom: 0.35em; }
+    .reveal .slide-sources ul.source-list a.ts { margin-right: 0.6em; }
+
+    /* chrome */
+    .reveal .progress { color: var(--accent); }
+    .reveal .controls { color: var(--accent); }
+    .reveal .slide-number { background: transparent; color: var(--muted); font: 500 12px/1 var(--body); right: 16px; bottom: 14px; }
+    .credit { position: fixed; left: 16px; bottom: 12px; z-index: 30; font: 500 12px/1.3 var(--body); color: var(--muted); }
+    .credit a { color: var(--muted); }
+    .hint { position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 31; display: flex; gap: 10px; align-items: center; font: 500 13px/1 var(--body); color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 9px 14px; box-shadow: 0 6px 24px rgba(0,0,0,.08); transition: opacity .4s; white-space: nowrap; }
+    .hint kbd { font: 600 11px var(--body); border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 5px; padding: 2px 6px; background: var(--bg); }
+    .hint.gone { opacity: 0; pointer-events: none; }
+    .pdf-btn { position: fixed; left: 16px; top: 14px; z-index: 30; font: 600 12px/1 var(--body); color: var(--muted); text-decoration: none; border: 1px solid var(--line); border-radius: 999px; padding: 7px 11px; background: var(--surface); }
+    .pdf-btn:hover { color: var(--accent); border-color: var(--accent); }
+    @media print { .hint, .pdf-btn, .credit { display: none !important; } }
+
+    @media (max-width: 640px) {
+      .compare { grid-template-columns: 1fr; }
+      .credit { display: none; }
+      .hint { font-size: 12px; }
+      .hint .desk { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section class="slide-title">
+        <p class="eyebrow">📈 Growth teardown · 🧪 demo deck, fictional company</p>
+        <h1>How Brewly turned a paper stamp card into a daily habit</h1>
+        <p class="source">From <strong>“We 3×'d daily users with one tiny change”</strong> · The Founder Hour (fictional) · 38 min</p>
+        <aside class="notes">This is a demo deck. Brewly, the speaker, and the video are fictional. Every slide type the skill uses appears here once.</aside>
+      </section>
+
+      <section class="slide-hook">
+        <p class="eyebrow">The hook</p>
+        <h2>They made the reward <em>smaller</em>, and people came back three times as often.</h2>
+        <a class="ts" title="In a real deck, this jumps to 4:12 in the video">4:12</a>
+        <aside class="notes">Open with the paradox: a smaller reward beat a bigger one. Ask the room why before revealing.</aside>
+      </section>
+
+      <section>
+        <p class="eyebrow">The situation</p>
+        <h2>A loved app that people only opened on Mondays</h2>
+        <ul class="points">
+          <li>Great reviews, but most users ordered once a week <a class="ts" title="In a real deck, this jumps to 2:05 in the video">2:05</a></li>
+          <li>The 10-stamp card took a month to fill <a class="ts" title="In a real deck, this jumps to 2:48 in the video">2:48</a></li>
+          <li>Half of cards were abandoned at stamp 3 <a class="ts" title="In a real deck, this jumps to 3:30 in the video">3:30</a></li>
+        </ul>
+        <aside class="notes">Set up the problem: the reward was so far away that it stopped motivating anyone.</aside>
+      </section>
+
+      <section>
+        <h2>The starting point</h2>
+        <div class="stats">
+          <div class="stat"><span class="num">1.1</span><span class="label">visits / week</span></div>
+          <div class="stat"><span class="num">31</span><span class="label">days to a free coffee</span></div>
+          <div class="stat"><span class="num">52%</span><span class="label">cards abandoned</span></div>
+        </div>
+        <aside class="notes">Numbers as the founder stated them at 2:05 to 3:30.</aside>
+      </section>
+
+      <section class="slide-divider" data-step="01">
+        <h2>The decision</h2>
+      </section>
+
+      <section>
+        <h2>From one big prize to many small wins</h2>
+        <div class="compare">
+          <div class="col before"><span class="tag">Before</span><p>☕ 10 stamps → 1 free coffee</p></div>
+          <div class="col after"><span class="tag">After</span><p>✨ Every 3rd visit → a surprise perk (size upgrade, pastry, extra shot)</p></div>
+        </div>
+        <aside class="notes">The reward got smaller but arrived 3× sooner, and it was unpredictable.</aside>
+      </section>
+
+      <section>
+        <h2>The rollout, step by step</h2>
+        <ol class="steps">
+          <li><strong>Test in two stores</strong><span>Two weeks, no marketing <a class="ts" title="In a real deck, this jumps to 9:40 in the video">9:40</a></span></li>
+          <li><strong>Add a progress ring</strong><span>The app shows "1 more visit to your surprise" <a class="ts" title="In a real deck, this jumps to 12:15 in the video">12:15</a></span></li>
+          <li><strong>Roll out everywhere</strong><span>Once retention held for a month <a class="ts" title="In a real deck, this jumps to 15:02 in the video">15:02</a></span></li>
+        </ol>
+        <aside class="notes">Emphasize the test-first approach: small, cheap, reversible.</aside>
+      </section>
+
+      <section class="slide-big">
+        <p class="big">3×</p>
+        <p class="caption">more weekly visits from regulars, six weeks after launch</p>
+        <a class="ts" title="In a real deck, this jumps to 18:20 in the video">18:20</a>
+        <aside class="notes">The headline result. Pause here.</aside>
+      </section>
+
+      <section class="slide-quote">
+        <blockquote>Nobody gets excited about a reward that's a month away. Make the next win feel close.</blockquote>
+        <p class="who">Maya Chen, co-founder of Brewly (fictional) <a class="ts" title="In a real deck, this jumps to 21:47 in the video">21:47</a></p>
+        <aside class="notes">This is the quote to remember. It generalizes beyond coffee.</aside>
+      </section>
+
+      <section data-kind="analysis">
+        <h2>Why it worked: the goal-gradient effect</h2>
+        <p class="lead">People speed up as a goal gets closer. Three short goals beat one long one, and surprise rewards make each visit a little lottery. 🎰</p>
+        <aside class="notes">This is our interpretation, not the founder's words. Mention variable rewards too.</aside>
+      </section>
+
+      <section>
+        <p class="eyebrow">What to steal</p>
+        <h2>Three moves you can copy this week</h2>
+        <div class="cards">
+          <div class="card"><span class="icon">🎯</span><h3>Shrink the goal</h3><p>Make the first win reachable in days, not weeks.</p></div>
+          <div class="card"><span class="icon">📊</span><h3>Show progress</h3><p>A ring or bar that says "1 more to go".</p></div>
+          <div class="card"><span class="icon">🎁</span><h3>Surprise them</h3><p>Rotate small perks so rewards feel fresh.</p></div>
+        </div>
+        <aside class="notes">Ask the audience where their product has a "month-away reward".</aside>
+      </section>
+
+      <section class="slide-quiz">
+        <p class="eyebrow">Your turn 🤔</p>
+        <h2>A gym app's users quit before their 30-day badge. What would Brewly try?</h2>
+        <ul class="options">
+          <li>A. A bigger badge at day 30</li>
+          <li>B. Small rewards at day 3, 7, and 14</li>
+          <li>C. A discount for annual plans</li>
+        </ul>
+        <p class="fragment answer">Brewly's playbook: <strong>B</strong>. Bring the next win closer <a class="ts" title="In a real deck, this jumps to 24:30 in the video">24:30</a></p>
+      </section>
+
+      <section class="slide-sources">
+        <h2>Sources</h2>
+        <p>All facts from “We 3×'d daily users with one tiny change”, The Founder Hour. <em>(Fictional demo: in a real deck, each chip opens the video at that second.)</em></p>
+        <ul class="source-list">
+          <li><a class="ts" title="In a real deck, this jumps to 2:05 in the video">2:05</a> Usage and the old stamp card</li>
+          <li><a class="ts" title="In a real deck, this jumps to 4:12 in the video">4:12</a> The smaller-reward surprise</li>
+          <li><a class="ts" title="In a real deck, this jumps to 9:40 in the video">9:40</a> The two-store test</li>
+          <li><a class="ts" title="In a real deck, this jumps to 18:20 in the video">18:20</a> Results after six weeks</li>
+          <li><a class="ts" title="In a real deck, this jumps to 21:47 in the video">21:47</a> "Make the next win feel close"</li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+
+  <div class="hint" aria-hidden="true"><span>👉 <kbd>→</kbd> or swipe</span><span class="desk"><kbd>S</kbd> notes</span><span class="desk"><kbd>F</kbd> full screen</span><span class="desk"><kbd>Esc</kbd> overview</span></div>
+  <a class="pdf-btn" href="?print-pdf" title="Open the print view, then choose Save as PDF">⬇ PDF</a>
+  <p class="credit">Made with <a href="https://github.com/tstfully/youtube-to-case-study" target="_blank">youtube-to-case-study</a> · transcript by <a href="https://youtubetranscript.dev" target="_blank">YouTubeTranscript.dev</a></p>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/notes/notes.min.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      center: false,
+      width: 1280,
+      height: 720,
+      margin: 0.08,
+      transition: "slide",
+      slideNumber: "c/t",
+      plugins: [RevealNotes]
+    });
+    (function () {
+      var hint = document.querySelector(".hint");
+      function hide() { hint.classList.add("gone"); }
+      Reveal.on("slidechanged", hide);
+      setTimeout(hide, 6000);
+      if (/print-pdf/.test(location.search)) { hide(); setTimeout(function () { window.print(); }, 1200); }
+    })();
+  </script>
+</body>
+</html>

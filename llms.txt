@@ -1,0 +1,33 @@
+# YouTube to Case Study
+
+> A free, open-source Claude skill that turns any YouTube video into a case-study slideshow: a single self-contained HTML file (reveal.js) with speaker notes, PDF export, and every fact linked to the exact second in the video. Styles: business case study, marketing case study, UX / product case study, and growth teardown. Built for non-developers: marketers, educators, product managers, students, consultants.
+
+## Install
+
+- Claude Code (one step): `/plugin install youtube-to-case-study --marketplace tstfully/youtube-to-case-study`
+- Claude Code (two steps): `/plugin marketplace add tstfully/youtube-to-case-study` then `/plugin install youtube-to-case-study@youtube-skills`
+- Any agent via the Skills CLI: `npx skills add tstfully/youtube-to-case-study`
+- Manual: clone into `~/.claude/skills/youtube-to-case-study`
+- Claude.ai: download the repo ZIP and upload it under Settings → Capabilities → Skills
+
+## How it works
+
+1. Gets the video transcript from YouTubeTranscript.dev (MCP server, API key in `YOUTUBETRANSCRIPT_API_KEY`, or a transcript the user pastes from https://www.youtubetranscript.dev/tools/transcript).
+2. Extracts the story: situation, complication, key moves, evidence with timestamps, results, lessons.
+3. Picks a framework (business, marketing, UX, growth) and plans 10-16 slides.
+4. Fills a pre-built template and returns one HTML file.
+
+## Files
+
+- [SKILL.md](SKILL.md): the instructions an agent follows
+- [references/case-study-frameworks.md](references/case-study-frameworks.md): story arcs per case-study style
+- [references/slide-patterns.md](references/slide-patterns.md): HTML for every slide type
+- [assets/template.html](assets/template.html): the slide template and design system
+- [scripts/fetch-transcript.mjs](scripts/fetch-transcript.mjs): zero-dependency transcript fetcher (Node 18+)
+- [examples/brewly-growth-teardown.html](examples/brewly-growth-teardown.html): finished example deck (fictional company)
+
+## Related
+
+- https://github.com/tstfully/youtube-to-course: YouTube video to interactive course
+- https://github.com/tstfully/youtube-to-ai-chat: chat with a YouTube video, with timestamp citations
+- https://youtubetranscript.dev: YouTube transcript API and free tools
